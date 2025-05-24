@@ -15,8 +15,16 @@
     "@mui/icons-material": "^6.4.3",
     "@mui/material": "^6.4.3",
     "@tanstack/react-query": "^5.66.9",
+    "bcrypt": "^6.0.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
+    "express-async-handler": "^1.2.0",
     "iodash": "^0.0.1-security",
+    "jsonwebtoken": "^9.0.2",
     "lodash": "^4.17.21",
+    "mongoose": "^8.15.0",
+    "node-fetch": "^2.7.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-hook-form": "^7.54.2",
@@ -35,6 +43,7 @@
     "eslint-plugin-react-hooks": "^5.0.0",
     "eslint-plugin-react-refresh": "^0.4.16",
     "globals": "^15.14.0",
+    "nodemon": "^3.1.10",
     "vite": "^6.0.5"
   }
 }

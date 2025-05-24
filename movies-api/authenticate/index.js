@@ -1,6 +1,7 @@
 import jwt from 'jsonwebtoken';
 import User from '../api/users/userModel';
 
+
 const authenticate = async (request, response, next) => {
     try { 
         const authHeader = request.headers.authorization;
