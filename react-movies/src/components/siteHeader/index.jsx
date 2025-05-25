@@ -11,15 +11,17 @@ import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemText from "@mui/material/ListItemText";
 import Box from "@mui/material/Box";
-import { AuthContext } from "../context/AuthContext";  // Import your AuthContext
+import { AuthContext } from "../../contexts/AuthContext"; 
 
 const SiteHeader = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const [drawerOpen, setDrawerOpen] = useState(false);
-  const { user, logout } = useContext(AuthContext);  // Get user state & logout func
+  const { user, logout } = useContext(AuthContext);
 
-  // Define menu options for logged in users
+  
+
+  
   const loggedInMenuOptions = [
     { label: "Home", path: "/" },
     { label: "Favorites", path: "/movies/favorites" },
@@ -28,7 +30,7 @@ const SiteHeader = () => {
     { label: "Now Playing", path: "/movies/now-playing" },
   ];
 
-  // Define menu options for logged out users (simpler, just Home)
+  
   const loggedOutMenuOptions = [
     { label: "Home", path: "/" },
   ];
@@ -83,7 +85,7 @@ const SiteHeader = () => {
 
             {user ? (
               <>
-                <Typography sx={{ ml: 2, mr: 2 }}>Hello, {user.username}</Typography>
+                <Typography sx={{ ml: 2, mr: 2 }}>Hello, {user.email}</Typography>
                 <Button
                   color="inherit"
                   onClick={() => {
@@ -137,7 +139,7 @@ const SiteHeader = () => {
             </ListItem>
           ))}
 
-          {/* Add login/signup/logout in the drawer for mobile */}
+          
           {user ? (
             <ListItem
               button

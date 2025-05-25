@@ -1,16 +1,29 @@
-import dotenv from 'dotenv';
 import mongoose from 'mongoose';
 
-dotenv.config();
+const initDb = (mongoUri) => {
+  if (!mongoUri) {
+    console.error("❌ MONGO_DB URI is missing. Cannot connect to database.");
 
-mongoose.connect(process.env.MONGO_DB);
+    return; 
+  }
 
-const db = mongoose.connection;
+  mongoose.connect(mongoUri)
+    .then(() => {
+      console.log(`✅ Database connected to ${mongoose.connection.db.databaseName} on ${mongoose.connection.host}`);
+    })
+    .catch(err => {
+      console.error(`❌ Database connection error: ${err.message}`);
+      
+    });
 
-db.on('error', (err) => {
-  console.error(`database connection error: ${err}`);
-});
+  
+  const db = mongoose.connection;
 
-db.once('open', () => {
-  console.log(`database connected to ${db.name} on ${db.host}`);
-});
+  db.on('error', (err) => {
+    console.error(`🔴 Database runtime error: ${err}`);
+  });
+
+  
+};
+
+export default initDb; 

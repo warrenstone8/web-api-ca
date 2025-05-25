@@ -16,11 +16,10 @@ import NowPlayingMoviesPage from "./pages/NowPlayingMoviesPage";
 import SiteHeader from "./components/siteHeader"; 
 import MoviesContextProvider from "./contexts/moviesContext";
 
-import { AuthProvider, AuthContext } from "./context/AuthContext";  // import AuthContext and Provider
-import Login from "./pages/Login";      // import your login page
-import Signup from "./pages/Signup";    // import your signup page
+import { AuthProvider, AuthContext } from "./contexts/AuthContext";  
+import Login from "./pages/Login";    
+import Signup from "./pages/Signup";   
 
-// Create ProtectedRoute component inline here or you can move it to a separate file
 const ProtectedRoute = ({ children }) => {
   const { user } = React.useContext(AuthContext);
   if (!user) {
@@ -42,7 +41,7 @@ const queryClient = new QueryClient({
 const App = () => {
   return (
     <QueryClientProvider client={queryClient}>
-      <AuthProvider> {/* Wrap the whole app in AuthProvider */}
+      <AuthProvider> 
         <BrowserRouter>
           <MoviesContextProvider>
             <SiteHeader />

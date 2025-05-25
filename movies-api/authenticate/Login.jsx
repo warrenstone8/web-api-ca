@@ -19,7 +19,7 @@ const Login = () => {
     setLoading(true);
     try {
       await login(form);
-      navigate("/"); // Redirect after successful login
+      navigate("/"); 
     } catch (err) {
       setError(err.message);
     } finally {

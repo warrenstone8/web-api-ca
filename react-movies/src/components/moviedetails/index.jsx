@@ -9,7 +9,7 @@ import Fab from "@mui/material/Fab";
 import Typography from "@mui/material/Typography";
 import Drawer from "@mui/material/Drawer";
 import Box from "@mui/material/Box";
-import MovieReviews from "../movieReviews";
+import MovieReviews from "../movieReviews"; 
 
 const MovieDetails = ({ movie }) => {
   const [drawerOpen, setDrawerOpen] = useState(false);
@@ -35,7 +35,6 @@ const MovieDetails = ({ movie }) => {
     fetchTrailer();
   }, [movie.id]);
 
-  
   const styles = {
     container: {
       padding: "16px",
@@ -146,7 +145,6 @@ const MovieDetails = ({ movie }) => {
         ))}
       </Paper>
 
-      {}
       {trailer && (
         <Box sx={styles.trailerContainer}>
           <Typography variant="h5" component="h3" sx={styles.trailerHeading}>

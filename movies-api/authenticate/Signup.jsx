@@ -22,7 +22,7 @@ const Signup = () => {
     setLoading(true);
     try {
       await signup(form);
-      navigate(from, { replace: true }); // Redirect after successful signup
+      navigate(from, { replace: true }); 
     } catch (err) {
       setError(err.message);
     } finally {

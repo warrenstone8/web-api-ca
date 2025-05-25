@@ -9,7 +9,7 @@ export const getTasks = async () => {
 
 /**
 
- * @param {Object} data - The task data to add
+ * @param {Object} data 
  */
 export const addTask = async (data) => {
   const res = await fetch(`${BASE_URL}/api/tasks`, {
@@ -23,8 +23,8 @@ export const addTask = async (data) => {
 };
 
 /**
- * Delete a task by ID
- * @param {string} id - Task ID to delete
+
+ * @param {string} id 
  */
 export const deleteTask = async (id) => {
   const res = await fetch(`${BASE_URL}/api/tasks/${id}`, {
@@ -34,7 +34,7 @@ export const deleteTask = async (id) => {
 };
 
 /**
- * Update a task by ID
+ 
  * @param {Object} data - The task object with updated fields
  */
 export const updateTask = async (data) => {

@@ -32,7 +32,7 @@ router.post('/', asyncHandler(async (req, res) => {
   }
 }));
 
-// Register a new user with password validation
+
 async function registerUser(req, res) {
   const { username, password } = req.body;
 
