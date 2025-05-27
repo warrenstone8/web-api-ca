@@ -10,10 +10,6 @@ const BASE_URL = 'https://api.themoviedb.org/3';
  */
 const makeRequest = async (endpoint) => {
   const API_KEY = process.env.TMDB_KEY;
-  console.log('🔍 Debug TMDB API (inside makeRequest):');
-  console.log('- TMDB_KEY from env:', API_KEY ? 'LOADED ✅' : 'NOT FOUND ❌');
-  console.log('- Key length:', API_KEY ? API_KEY.length : 0);
-  console.log('- First 10 chars:', API_KEY ? API_KEY.substring(0, 10) : 'N/A');
 
   if (!API_KEY) {
     throw new Error('TMDB_KEY is not defined in environment variables when making API request');
@@ -25,7 +21,7 @@ const makeRequest = async (endpoint) => {
   const res = await fetch(url);
   if (!res.ok) {
     const error = await res.json();
-    console.error('❌ TMDB API Error:', error);
+    console.error(' TMDB API Error:', error);
     throw new Error(error.status_message || 'TMDB API request failed');
   }
   return res.json();

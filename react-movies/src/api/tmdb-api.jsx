@@ -1,4 +1,4 @@
-// react-movies/src/api/tmdb-api.jsx
+
 const BASE_URL = "http://localhost:3000/api/movies";
 
 export const getMovies = () => fetch(`${BASE_URL}/discover`).then((res) => res.json());

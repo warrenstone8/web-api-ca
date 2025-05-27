@@ -5,7 +5,6 @@ import React, { useState, useEffect } from 'react';
 import {getTasks, addTask, deleteTask, updateTask} from "./api/tasky-api";
 
 function App() {
-  
   const [ taskState, setTaskState ] = useState({tasks: []});
 
   useEffect(() => {
@@ -21,8 +20,6 @@ function App() {
       priority: "Low"
     });
   
-  //console.log(formState);
-
   const doneHandler = (taskIndex) => {
     const tasks = [...taskState.tasks];
     tasks[taskIndex].done = !tasks[taskIndex].done;

@@ -49,8 +49,6 @@ const App = () => {
               <Route path="/" element={<HomePage />} />
               <Route path="/login" element={<Login />} />
               <Route path="/signup" element={<Signup />} />
-
-              {/* Protect favorites route */}
               <Route
                 path="/movies/favorites"
                 element={
@@ -59,7 +57,6 @@ const App = () => {
                   </ProtectedRoute>
                 }
               />
-
               <Route path="/reviews/:id" element={<MovieReviewPage />} />
               <Route path="/movies/:id" element={<MoviePage />} />
               <Route path="/movies/:id/cast" element={<CastAndCrewPage />} />
@@ -67,7 +64,6 @@ const App = () => {
               <Route path="/movies/upcoming" element={<UpcomingMoviesPage />} />
               <Route path="/movies/popular" element={<PopularMoviesPage />} />
               <Route path="/movies/now-playing" element={<NowPlayingMoviesPage />} />
-
               <Route path="*" element={<Navigate to="/" />} />
             </Routes>
           </MoviesContextProvider>

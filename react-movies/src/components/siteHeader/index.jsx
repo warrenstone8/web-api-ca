@@ -19,9 +19,6 @@ const SiteHeader = () => {
   const [drawerOpen, setDrawerOpen] = useState(false);
   const { user, logout } = useContext(AuthContext);
 
-  
-
-  
   const loggedInMenuOptions = [
     { label: "Home", path: "/" },
     { label: "Favorites", path: "/movies/favorites" },

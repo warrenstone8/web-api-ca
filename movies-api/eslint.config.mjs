@@ -7,8 +7,8 @@ export default [
     files: ["**/*.js"],
     languageOptions: {
       globals: globals.node,
-      ecmaVersion: 2020, // ES6
-      sourceType: "module", // Use module format
+      ecmaVersion: 2020, 
+      sourceType: "module", 
     },
     rules: {
       "semi": 1,
